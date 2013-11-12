@@ -17,7 +17,6 @@
 		5C43A7851830408500438404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C43A7831830408500438404 /* Main.storyboard */; };
 		5C43A7881830408500438404 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43A7871830408500438404 /* ViewController.m */; };
 		5C43A78B1830408500438404 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43A78A1830408500438404 /* MyScene.m */; };
-		5C43A78D1830408500438404 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C43A78C1830408500438404 /* Spaceship.png */; };
 		5C43A78F1830408600438404 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C43A78E1830408600438404 /* Images.xcassets */; };
 		5C43A7961830408600438404 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C43A7951830408600438404 /* XCTest.framework */; };
 		5C43A7971830408600438404 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C43A76F1830408500438404 /* Foundation.framework */; };
@@ -53,7 +52,6 @@
 		5C43A7871830408500438404 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5C43A7891830408500438404 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		5C43A78A1830408500438404 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		5C43A78C1830408500438404 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		5C43A78E1830408600438404 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5C43A7941830408600438404 /* FlubbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlubbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C43A7951830408600438404 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -128,7 +126,6 @@
 				5C43A7871830408500438404 /* ViewController.m */,
 				5C43A7891830408500438404 /* MyScene.h */,
 				5C43A78A1830408500438404 /* MyScene.m */,
-				5C43A78C1830408500438404 /* Spaceship.png */,
 				5C43A78E1830408600438404 /* Images.xcassets */,
 				5C43A7781830408500438404 /* Supporting Files */,
 			);
@@ -242,7 +239,6 @@
 			files = (
 				5C43A77C1830408500438404 /* InfoPlist.strings in Resources */,
 				5C43A78F1830408600438404 /* Images.xcassets in Resources */,
-				5C43A78D1830408500438404 /* Spaceship.png in Resources */,
 				5C43A7851830408500438404 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +474,7 @@
 				5C43A7A71830408600438404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C43A7A81830408600438404 /* Build configuration list for PBXNativeTarget "FlubbleTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +483,7 @@
 				5C43A7AA1830408600438404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
