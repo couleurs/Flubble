@@ -23,6 +23,9 @@
 		5C43A7981830408600438404 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C43A7731830408500438404 /* UIKit.framework */; };
 		5C43A7A01830408600438404 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C43A79E1830408600438404 /* InfoPlist.strings */; };
 		5C43A7A21830408600438404 /* FlubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43A7A11830408600438404 /* FlubbleTests.m */; };
+		5C7B74C21833609500105E3E /* red_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5C7B74C11833609400105E3E /* red_background.mp4 */; };
+		5CEA068518354F6B003E0C30 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA068318354F6B003E0C30 /* MyParticle.sks */; };
+		5CEA068618354F6B003E0C30 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA068418354F6B003E0C30 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		5C43A79D1830408600438404 /* FlubbleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlubbleTests-Info.plist"; sourceTree = "<group>"; };
 		5C43A79F1830408600438404 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C43A7A11830408600438404 /* FlubbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlubbleTests.m; sourceTree = "<group>"; };
+		5C7B74C11833609400105E3E /* red_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = red_background.mp4; sourceTree = "<group>"; };
+		5CEA068318354F6B003E0C30 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		5CEA068418354F6B003E0C30 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		5C43A7771830408500438404 /* Flubble */ = {
 			isa = PBXGroup;
 			children = (
+				5C7B74C01833608A00105E3E /* Videos */,
 				5C43A7801830408500438404 /* AppDelegate.h */,
 				5C43A7811830408500438404 /* AppDelegate.m */,
 				5C43A7831830408500438404 /* Main.storyboard */,
@@ -126,6 +133,8 @@
 				5C43A7871830408500438404 /* ViewController.m */,
 				5C43A7891830408500438404 /* MyScene.h */,
 				5C43A78A1830408500438404 /* MyScene.m */,
+				5CEA068318354F6B003E0C30 /* MyParticle.sks */,
+				5CEA068418354F6B003E0C30 /* spark.png */,
 				5C43A78E1830408600438404 /* Images.xcassets */,
 				5C43A7781830408500438404 /* Supporting Files */,
 			);
@@ -159,6 +168,14 @@
 				5C43A79E1830408600438404 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C7B74C01833608A00105E3E /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				5C7B74C11833609400105E3E /* red_background.mp4 */,
+			);
+			name = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,8 +255,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C43A77C1830408500438404 /* InfoPlist.strings in Resources */,
+				5CEA068618354F6B003E0C30 /* spark.png in Resources */,
 				5C43A78F1830408600438404 /* Images.xcassets in Resources */,
 				5C43A7851830408500438404 /* Main.storyboard in Resources */,
+				5C7B74C21833609500105E3E /* red_background.mp4 in Resources */,
+				5CEA068518354F6B003E0C30 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
