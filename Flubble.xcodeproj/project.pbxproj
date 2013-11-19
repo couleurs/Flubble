@@ -24,6 +24,9 @@
 		5C43A7A01830408600438404 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C43A79E1830408600438404 /* InfoPlist.strings */; };
 		5C43A7A21830408600438404 /* FlubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43A7A11830408600438404 /* FlubbleTests.m */; };
 		5C7B74C21833609500105E3E /* red_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5C7B74C11833609400105E3E /* red_background.mp4 */; };
+		5CB6BA7A1839FDA00049D72A /* Spawner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6BA791839FDA00049D72A /* Spawner.m */; };
+		5CB6BA7C183A00930049D72A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB6BA7B183A00930049D72A /* AVFoundation.framework */; };
+		5CB6BA7F183B03240049D72A /* IncompleteCircleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6BA7E183B03240049D72A /* IncompleteCircleNode.m */; };
 		5CEA068518354F6B003E0C30 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA068318354F6B003E0C30 /* MyParticle.sks */; };
 		5CEA068618354F6B003E0C30 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA068418354F6B003E0C30 /* spark.png */; };
 /* End PBXBuildFile section */
@@ -62,6 +65,11 @@
 		5C43A79F1830408600438404 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C43A7A11830408600438404 /* FlubbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlubbleTests.m; sourceTree = "<group>"; };
 		5C7B74C11833609400105E3E /* red_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = red_background.mp4; sourceTree = "<group>"; };
+		5CB6BA781839FDA00049D72A /* Spawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spawner.h; sourceTree = "<group>"; };
+		5CB6BA791839FDA00049D72A /* Spawner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spawner.m; sourceTree = "<group>"; };
+		5CB6BA7B183A00930049D72A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5CB6BA7D183B03240049D72A /* IncompleteCircleNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncompleteCircleNode.h; sourceTree = "<group>"; };
+		5CB6BA7E183B03240049D72A /* IncompleteCircleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncompleteCircleNode.m; sourceTree = "<group>"; };
 		5CEA068318354F6B003E0C30 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		5CEA068418354F6B003E0C30 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB6BA7C183A00930049D72A /* AVFoundation.framework in Frameworks */,
 				5C43A7721830408500438404 /* CoreGraphics.framework in Frameworks */,
 				5C43A7741830408500438404 /* UIKit.framework in Frameworks */,
 				5C43A7761830408500438404 /* SpriteKit.framework in Frameworks */,
@@ -113,6 +122,7 @@
 		5C43A76E1830408500438404 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CB6BA7B183A00930049D72A /* AVFoundation.framework */,
 				5C43A76F1830408500438404 /* Foundation.framework */,
 				5C43A7711830408500438404 /* CoreGraphics.framework */,
 				5C43A7731830408500438404 /* UIKit.framework */,
@@ -125,6 +135,7 @@
 		5C43A7771830408500438404 /* Flubble */ = {
 			isa = PBXGroup;
 			children = (
+				5CB6BA771839FA730049D72A /* Nodes */,
 				5C7B74C01833608A00105E3E /* Videos */,
 				5C43A7801830408500438404 /* AppDelegate.h */,
 				5C43A7811830408500438404 /* AppDelegate.m */,
@@ -133,6 +144,8 @@
 				5C43A7871830408500438404 /* ViewController.m */,
 				5C43A7891830408500438404 /* MyScene.h */,
 				5C43A78A1830408500438404 /* MyScene.m */,
+				5CB6BA781839FDA00049D72A /* Spawner.h */,
+				5CB6BA791839FDA00049D72A /* Spawner.m */,
 				5CEA068318354F6B003E0C30 /* MyParticle.sks */,
 				5CEA068418354F6B003E0C30 /* spark.png */,
 				5C43A78E1830408600438404 /* Images.xcassets */,
@@ -176,6 +189,15 @@
 				5C7B74C11833609400105E3E /* red_background.mp4 */,
 			);
 			name = Videos;
+			sourceTree = "<group>";
+		};
+		5CB6BA771839FA730049D72A /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				5CB6BA7D183B03240049D72A /* IncompleteCircleNode.h */,
+				5CB6BA7E183B03240049D72A /* IncompleteCircleNode.m */,
+			);
+			name = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +304,8 @@
 				5C43A7881830408500438404 /* ViewController.m in Sources */,
 				5C43A7821830408500438404 /* AppDelegate.m in Sources */,
 				5C43A77E1830408500438404 /* main.m in Sources */,
+				5CB6BA7A1839FDA00049D72A /* Spawner.m in Sources */,
+				5CB6BA7F183B03240049D72A /* IncompleteCircleNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
