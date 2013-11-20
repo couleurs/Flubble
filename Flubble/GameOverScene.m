@@ -14,6 +14,7 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
+        self.backgroundColor = [SKColor blackColor];
         self.anchorPoint = CGPointMake(0.5, 0.5);
         SKLabelNode *goNode = [[SKLabelNode alloc] initWithFontNamed:@"Avenir-Light"];
         goNode.fontColor = [SKColor whiteColor];

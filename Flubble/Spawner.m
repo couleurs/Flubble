@@ -44,7 +44,7 @@
     node.strokeColor = [FlubbleColors planetColor];
     node.glowWidth = BALL_GLOW_WIDTH;
     
-    node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:BALL_WIDTH/2];
+//    node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:BALL_WIDTH/2];
 //    node.physicsBody.categoryBitMask = flubbleCategory;
 //    node.physicsBody.contactTestBitMask = enemyCategory;
 //    node.physicsBody.collisionBitMask = 0;
