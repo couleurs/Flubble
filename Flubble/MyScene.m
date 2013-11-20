@@ -111,8 +111,12 @@
     }
     
     [enemy removeFromParent];
-    self.livesCount--;
-    if (self.livesCount == 0) [self transitionToGameOver];
+    [self.enemies removeObject:enemy];
+    
+    if (firstNode.physicsBody.categoryBitMask == flubbleCategory || secondNode.physicsBody.categoryBitMask == flubbleCategory) {
+        self.livesCount--;
+        if (self.livesCount == 0) [self transitionToGameOver];
+    }
 }
 
 - (void)transitionToGameOver

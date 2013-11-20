@@ -144,21 +144,19 @@
 		5C43A7771830408500438404 /* Flubble */ = {
 			isa = PBXGroup;
 			children = (
+				5CC6AC67183C8388009DB06C /* Scenes */,
 				5CB6BA771839FA730049D72A /* Nodes */,
 				5C7B74C01833608A00105E3E /* Videos */,
-				5C43A7801830408500438404 /* AppDelegate.h */,
-				5C43A7811830408500438404 /* AppDelegate.m */,
+				5CB6BA781839FDA00049D72A /* Spawner.h */,
+				5CB6BA791839FDA00049D72A /* Spawner.m */,
+				5CC6AC60183C4842009DB06C /* FlubbleColors.h */,
+				5CC6AC63183C7081009DB06C /* FlubbleConstants.h */,
+				5CC6AC61183C4C88009DB06C /* FlubbleColors.m */,
+				5CEA068318354F6B003E0C30 /* MyParticle.sks */,
+				5CEA068418354F6B003E0C30 /* spark.png */,
 				5C43A7831830408500438404 /* Main.storyboard */,
 				5C43A7861830408500438404 /* ViewController.h */,
 				5C43A7871830408500438404 /* ViewController.m */,
-				5C43A7891830408500438404 /* MyScene.h */,
-				5C43A78A1830408500438404 /* MyScene.m */,
-				5CC6AC64183C7585009DB06C /* GameOverScene.h */,
-				5CC6AC65183C7585009DB06C /* GameOverScene.m */,
-				5CB6BA781839FDA00049D72A /* Spawner.h */,
-				5CB6BA791839FDA00049D72A /* Spawner.m */,
-				5CEA068318354F6B003E0C30 /* MyParticle.sks */,
-				5CEA068418354F6B003E0C30 /* spark.png */,
 				5C43A78E1830408600438404 /* Images.xcassets */,
 				5C43A7781830408500438404 /* Supporting Files */,
 			);
@@ -168,6 +166,8 @@
 		5C43A7781830408500438404 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5C43A7801830408500438404 /* AppDelegate.h */,
+				5C43A7811830408500438404 /* AppDelegate.m */,
 				5C43A7791830408500438404 /* Flubble-Info.plist */,
 				5C43A77A1830408500438404 /* InfoPlist.strings */,
 				5C43A77D1830408500438404 /* main.m */,
@@ -208,11 +208,19 @@
 			children = (
 				5CB6BA7D183B03240049D72A /* IncompleteCircleNode.h */,
 				5CB6BA7E183B03240049D72A /* IncompleteCircleNode.m */,
-				5CC6AC60183C4842009DB06C /* FlubbleColors.h */,
-				5CC6AC63183C7081009DB06C /* FlubbleConstants.h */,
-				5CC6AC61183C4C88009DB06C /* FlubbleColors.m */,
 			);
 			name = Nodes;
+			sourceTree = "<group>";
+		};
+		5CC6AC67183C8388009DB06C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5C43A7891830408500438404 /* MyScene.h */,
+				5C43A78A1830408500438404 /* MyScene.m */,
+				5CC6AC64183C7585009DB06C /* GameOverScene.h */,
+				5CC6AC65183C7585009DB06C /* GameOverScene.m */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
