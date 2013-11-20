@@ -1,4 +1,4 @@
-//
+;//
 //  IncompleteCircleNode.m
 //  Flubble
 //
@@ -7,6 +7,7 @@
 //
 
 #import "IncompleteCircleNode.h"
+#import "FlubbleColors.h"
 
 @interface IncompleteCircleNode()
 
@@ -34,7 +35,8 @@
         [path applyTransform:self.rotation];
         self.path = [path CGPath];
         self.fillColor = [SKColor clearColor];
-        self.strokeColor = [SKColor whiteColor];
+        self.strokeColor = [self enemyColor];
+        self.lineWidth = 1.5;
     }
     return self;
 }
@@ -47,7 +49,7 @@
     UIBezierPath *newPath = [UIBezierPath bezierPathWithArcCenter:CGPointZero
                                                              radius:self.currentRadius
                                                          startAngle:0
-                                                           endAngle:2*M_PI - self.holeAngleWidth
+                                                           endAngle:2.0*M_PI - self.holeAngleWidth
                                                           clockwise:YES];
     [newPath applyTransform:self.rotation];
     self.path = [newPath CGPath];
@@ -59,5 +61,12 @@
     self.physicsBody.categoryBitMask = categoryBitMask;
     self.physicsBody.contactTestBitMask = contactTestBitMask;
 }
+
+- (SKColor *)enemyColor
+{
+    NSArray *colors = [FlubbleColors enemyColors];
+    return colors[(int)arc4random() % [colors count]];
+}
+
 
 @end

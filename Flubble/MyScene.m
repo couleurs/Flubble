@@ -9,13 +9,14 @@
 #import "MyScene.h"
 #import "Spawner.h"
 #import "IncompleteCircleNode.h"
+#import "FlubbleConstants.h"
+#import "GameOverScene.h"
 @import AVFoundation;
 
 
 @interface MyScene ()
 
 @property (nonatomic, strong) NSMutableArray *enemies;
-
 @property (nonatomic, strong) AVPlayer *bgVideoPlayer;
 
 //FLUBBLE
@@ -27,9 +28,35 @@
 //PLANET
 @property (nonatomic, strong) SKNode *planetNode;
 
+//HUD
+@property (nonatomic, assign) CFTimeInterval initialTime;
+@property (nonatomic, assign) NSUInteger score;
+@property (nonatomic, strong) SKLabelNode *scoreNode;
+@property (nonatomic, assign) NSUInteger livesCount;
+
 @end
 
 @implementation MyScene
+
+#define SCORE_LABEL_OFFSET 10
+
+- (SKLabelNode *)scoreNode
+{
+    if (!_scoreNode) {
+        _scoreNode = [[SKLabelNode alloc] initWithFontNamed:@"Avenir-Light"];
+        _scoreNode.position = CGPointMake(-self.size.width/2 + SCORE_LABEL_OFFSET,-self.size.height/2 + SCORE_LABEL_OFFSET);
+        _scoreNode.fontColor = [SKColor whiteColor];
+        _scoreNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+        [self addChild:_scoreNode];
+    }
+    return _scoreNode;
+}
+
+- (void)setScore:(NSUInteger)score
+{
+    _score = score;
+    self.scoreNode.text = [NSString stringWithFormat:@"Score %lu", (unsigned long)score];
+}
 
 #define FLUBBLE_BALL_OFFSET 50
 
@@ -46,7 +73,7 @@
 - (AVPlayer *)bgVideoPlayer
 {
     if (!_bgVideoPlayer) {
-        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"red_background" ofType:@"mp4"]];
+        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"black_bg" ofType:@"mp4"]];
         _bgVideoPlayer = [[AVPlayer alloc] initWithURL:url];
         _bgVideoPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -74,8 +101,27 @@
     SKNode *firstNode = contact.bodyA.node;
     SKNode *secondNode = contact.bodyB.node;
     
-    SKNode *circleNode = ([firstNode isKindOfClass:[IncompleteCircleNode class]]) ? firstNode : secondNode;
-    [circleNode removeFromParent];
+    SKNode *enemy;
+    if (firstNode.physicsBody.categoryBitMask == enemyCategory) {
+        enemy = firstNode;
+    }
+    
+    if (secondNode.physicsBody.categoryBitMask == enemyCategory) {
+        enemy = secondNode;
+    }
+    
+    [enemy removeFromParent];
+    self.livesCount--;
+    if (self.livesCount == 0) [self transitionToGameOver];
+}
+
+- (void)transitionToGameOver
+{
+    SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:1.0];
+    transition.pausesOutgoingScene = YES;
+    GameOverScene *goScene = [[GameOverScene alloc] initWithSize:self.size];
+    [self.scene.view presentScene:goScene
+                       transition:transition];
 }
 
 - (void)didMoveToView:(SKView *)view
@@ -83,18 +129,24 @@
     [view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)]];
 }
 
+- (void)setup
+{
+    self.anchorPoint = CGPointMake(0.5, 0.5);
+    self.flubbleTheta = 0;
+    self.score = 0;
+    self.initialTime = 0;
+    self.livesCount = 3;
+    self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+}
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
- 
-        /* Setup your scene here */
-        self.flubbleTheta = 0;
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        self.anchorPoint = CGPointMake(0.5, 0.5);
-        
+        [self setup];
         
         //VIDEO BACKGROUND
         SKVideoNode *videoNode = [[SKVideoNode alloc] initWithAVPlayer:self.bgVideoPlayer];
         videoNode.size = self.size;
+        videoNode.zPosition = -1;
         [self addChild:videoNode];
         [videoNode play];
         
@@ -118,7 +170,7 @@
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
         
-        [NSTimer scheduledTimerWithTimeInterval:5.0
+        [NSTimer scheduledTimerWithTimeInterval:3
                                          target:self
                                        selector:@selector(addEnemy:)
                                        userInfo:nil
@@ -149,7 +201,11 @@
 #define GESTURE_TO_SPEED_FACTOR 2000
 
 -(void)update:(CFTimeInterval)currentTime {
-
+    if (self.initialTime == 0) {
+        self.initialTime = currentTime;
+    }
+    self.score = currentTime - self.initialTime;
+    
     //UPDATE FLUBBLE BASED ON GESTURE
     self.flubbleSpeed = CGPointMake(self.flubbleSpeed.x / DECELERATION_FACTOR, self.flubbleSpeed.y);
     self.flubbleTheta += self.flubbleSpeed.x/GESTURE_TO_SPEED_FACTOR;

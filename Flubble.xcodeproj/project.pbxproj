@@ -27,6 +27,9 @@
 		5CB6BA7A1839FDA00049D72A /* Spawner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6BA791839FDA00049D72A /* Spawner.m */; };
 		5CB6BA7C183A00930049D72A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB6BA7B183A00930049D72A /* AVFoundation.framework */; };
 		5CB6BA7F183B03240049D72A /* IncompleteCircleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6BA7E183B03240049D72A /* IncompleteCircleNode.m */; };
+		5CC6AC5F183C466C009DB06C /* black_bg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CC6AC5E183C466C009DB06C /* black_bg.mp4 */; };
+		5CC6AC62183C4C88009DB06C /* FlubbleColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6AC61183C4C88009DB06C /* FlubbleColors.m */; };
+		5CC6AC66183C7585009DB06C /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6AC65183C7585009DB06C /* GameOverScene.m */; };
 		5CEA068518354F6B003E0C30 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA068318354F6B003E0C30 /* MyParticle.sks */; };
 		5CEA068618354F6B003E0C30 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA068418354F6B003E0C30 /* spark.png */; };
 /* End PBXBuildFile section */
@@ -70,6 +73,12 @@
 		5CB6BA7B183A00930049D72A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5CB6BA7D183B03240049D72A /* IncompleteCircleNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncompleteCircleNode.h; sourceTree = "<group>"; };
 		5CB6BA7E183B03240049D72A /* IncompleteCircleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncompleteCircleNode.m; sourceTree = "<group>"; };
+		5CC6AC5E183C466C009DB06C /* black_bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = black_bg.mp4; sourceTree = "<group>"; };
+		5CC6AC60183C4842009DB06C /* FlubbleColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlubbleColors.h; sourceTree = "<group>"; };
+		5CC6AC61183C4C88009DB06C /* FlubbleColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlubbleColors.m; sourceTree = "<group>"; };
+		5CC6AC63183C7081009DB06C /* FlubbleConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlubbleConstants.h; sourceTree = "<group>"; };
+		5CC6AC64183C7585009DB06C /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		5CC6AC65183C7585009DB06C /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		5CEA068318354F6B003E0C30 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		5CEA068418354F6B003E0C30 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +153,8 @@
 				5C43A7871830408500438404 /* ViewController.m */,
 				5C43A7891830408500438404 /* MyScene.h */,
 				5C43A78A1830408500438404 /* MyScene.m */,
+				5CC6AC64183C7585009DB06C /* GameOverScene.h */,
+				5CC6AC65183C7585009DB06C /* GameOverScene.m */,
 				5CB6BA781839FDA00049D72A /* Spawner.h */,
 				5CB6BA791839FDA00049D72A /* Spawner.m */,
 				5CEA068318354F6B003E0C30 /* MyParticle.sks */,
@@ -186,6 +197,7 @@
 		5C7B74C01833608A00105E3E /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				5CC6AC5E183C466C009DB06C /* black_bg.mp4 */,
 				5C7B74C11833609400105E3E /* red_background.mp4 */,
 			);
 			name = Videos;
@@ -196,6 +208,9 @@
 			children = (
 				5CB6BA7D183B03240049D72A /* IncompleteCircleNode.h */,
 				5CB6BA7E183B03240049D72A /* IncompleteCircleNode.m */,
+				5CC6AC60183C4842009DB06C /* FlubbleColors.h */,
+				5CC6AC63183C7081009DB06C /* FlubbleConstants.h */,
+				5CC6AC61183C4C88009DB06C /* FlubbleColors.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -280,6 +295,7 @@
 				5CEA068618354F6B003E0C30 /* spark.png in Resources */,
 				5C43A78F1830408600438404 /* Images.xcassets in Resources */,
 				5C43A7851830408500438404 /* Main.storyboard in Resources */,
+				5CC6AC5F183C466C009DB06C /* black_bg.mp4 in Resources */,
 				5C7B74C21833609500105E3E /* red_background.mp4 in Resources */,
 				5CEA068518354F6B003E0C30 /* MyParticle.sks in Resources */,
 			);
@@ -300,11 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC6AC62183C4C88009DB06C /* FlubbleColors.m in Sources */,
 				5C43A78B1830408500438404 /* MyScene.m in Sources */,
 				5C43A7881830408500438404 /* ViewController.m in Sources */,
 				5C43A7821830408500438404 /* AppDelegate.m in Sources */,
 				5C43A77E1830408500438404 /* main.m in Sources */,
 				5CB6BA7A1839FDA00049D72A /* Spawner.m in Sources */,
+				5CC6AC66183C7585009DB06C /* GameOverScene.m in Sources */,
 				5CB6BA7F183B03240049D72A /* IncompleteCircleNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
